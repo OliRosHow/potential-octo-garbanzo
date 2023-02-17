@@ -8,7 +8,30 @@ h1
   color: gold;
 }
 
+h2
+{
+  color:gold
+}
+
 p
 {
   color: Cyan;
+}
+
+ol
+{
+  color: red;
+}
+
+ul
+{
+  color: blueviolet;
+}
+
+hr
+{
+  size: 8;
+  width: 100%;
+  color:white;
+  justify-self: unset;
 }
