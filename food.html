@@ -2,6 +2,32 @@
 <head>
     <title>Food</title>
     <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .collapsible {
+        background-color: black;
+        color: white;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        }
+
+        .active, .collapsible:hover {
+        background-color: white;
+        color: black;
+        }
+
+        .content {
+        padding: 0 18px;
+        display: none;
+        overflow: hidden;
+        background-color: black;
+        }
+    </style>
 </head>
 <body>
     <h2>Food</h2>
@@ -18,9 +44,9 @@
         
         <p>Lunch after leaving - ????</p>     
 <hr>
-        <p>BREAKFAST </p>
+        <button class="collapsible">BREAKFAST</button>
         
-    <ol>
+    <ol class="content">
         <li>Breakfast</li>
             <ul>
             <li>Breakfast Burrito</li>
@@ -54,9 +80,9 @@
 
     </ol> 
 <hr>
-        <p>DINNER & LUNCH</p>
+        <button class="collapsible">DINNER & LUNCH</button>
         
-        <ol>
+        <ol class="content">
         <li>Dinner </li>
         <ul>
             <li>Taco</li>
@@ -110,8 +136,27 @@
 
     </ol>       
 <hr>
-        <p>DESSERT </p>
-        <ul>
+        <button class="collapsible">DESSERT </button>
+        <ul class="content">
             <li>S'mores</li>
-        </ul>   
+        </ul>  
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+            
+            for (i = 0; i < coll.length; i++) 
+            {
+              coll[i].addEventListener("click", 
+              function() 
+              {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") 
+                    content.style.display = "none"; 
+                else 
+                    content.style.display = "block";
+                
+              });
+            }
+        </script> 
 </body>
